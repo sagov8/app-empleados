@@ -11,6 +11,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { MensajeConfirmacionComponent } from './components/shared/mensaje-confirmacion/mensaje-confirmacion.component';
 import { AngularMaterialModule } from './components/shared/angular-material/angular-material.module';
 
+
 @NgModule({
   declarations: [
     AppComponent,

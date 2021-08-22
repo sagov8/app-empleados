@@ -8,7 +8,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
-
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatButtonModule} from '@angular/material/button';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [],
@@ -21,7 +23,10 @@ import {MatSortModule} from '@angular/material/sort';
     MatInputModule,
     MatFormFieldModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatDialogModule,
+    MatButtonModule,
+    MatSnackBarModule
   ],
   exports: [
     MatSliderModule,
@@ -32,7 +37,10 @@ import {MatSortModule} from '@angular/material/sort';
     MatInputModule,
     MatFormFieldModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatDialogModule,
+    MatButtonModule,
+    MatSnackBarModule
   ]
 })
 export class AngularMaterialModule { }
