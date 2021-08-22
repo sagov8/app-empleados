@@ -1,8 +1,16 @@
-<div class="mat-elevation-z8"> 
+<div >
+        <h2 class="text-center title">Listado de Empleados</h2>
+</div>
+<div class="mat-elevation-z8">
     <mat-form-field appearance="standard">
         <mat-label>Filtro</mat-label>
         <input matInput (keyup)="applyFilter($event)" placeholder="Ingrese su búsqueda" autocomplete="off" #input />
       </mat-form-field>
+      <span class="btn">
+        <button mat-mini-fab color="warn" aria-label="Example icon button with a plus one icon">
+            <mat-icon>person_add_alt</mat-icon>
+          </button>
+      </span>
       
       <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
        

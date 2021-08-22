@@ -70,6 +70,9 @@ export class ListEmpleadoComponent implements OnInit, AfterViewInit {
       if (result === 'aceptar') {
         this.empleadoService.eliminarEmpleado(index);
         this.cargarEmpleados();
+        this.snackBar.open('El empleado se ha eliminado correctamente', '',{ 
+          duration: 3000
+        });
       }
     });
   }
