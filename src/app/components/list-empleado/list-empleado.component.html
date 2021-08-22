@@ -2,12 +2,13 @@
         <h2 class="text-center title">Listado de Empleados</h2>
 </div>
 <div class="mat-elevation-z8">
+    
     <mat-form-field appearance="standard">
-        <mat-label>Filtro</mat-label>
+        <mat-label><mat-icon>search</mat-icon>Buscar</mat-label>
         <input matInput (keyup)="applyFilter($event)" placeholder="Ingrese su búsqueda" autocomplete="off" #input />
       </mat-form-field>
       <span class="btn">
-        <button mat-mini-fab color="warn" aria-label="Example icon button with a plus one icon">
+        <button mat-mini-fab color="warn" routerLink="/add">
             <mat-icon>person_add_alt</mat-icon>
           </button>
       </span>
