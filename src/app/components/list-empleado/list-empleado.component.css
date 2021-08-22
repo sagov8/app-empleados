@@ -4,7 +4,16 @@ table {
 
 .mat-form-field {
   font-size: 14px;
-  width: 90%;
-  margin-left: 3rem;
-  margin-right: 3rem;
+  width: 50%;
+  margin-left: 20rem;
+  margin-right: 15rem;
 }
+
+.edit{
+    color: #1878B0;
+}
+
+.delete{
+    color: #E15639;
+}
+

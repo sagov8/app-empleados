@@ -1,10 +1,10 @@
 export class Empleado {
-    nombreCompleto: string;
-    telefono: number;
-    correo: string;
-    fechaIngreso: Date;
-    estadoCivil: string;
-    sexo: string;
+    nombreCompleto!: string;
+    telefono!: number;
+    correo!: string;
+    fechaIngreso!: Date;
+    estadoCivil!: string;
+    sexo!: string;
 
     constructor(){
 
