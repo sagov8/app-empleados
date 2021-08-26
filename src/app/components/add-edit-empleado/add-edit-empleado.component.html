@@ -7,7 +7,7 @@
                 </mat-card-header>
             </div>
 
-            <form [formGroup]="myForm" class="text-center">
+            <form [formGroup]="myForm" class="text-center" (ngSubmit)="guardarEmpleado()">
                 <div class="col-lg-12">
                     <div *ngIf="myForm.get('nombreCompleto')!.hasError('maxlength') && myForm.get('nombreCompleto')!.touched">
                         <span class="mdb-form-msg">Nombre demasiado <strong>largo*</strong></span>
@@ -82,7 +82,7 @@
                     </mat-form-field>
                 </div>
                 <div class="col-lg-12">
-                    <button mat-raised-button color="warn" [disabled]="myForm.invalid" (click)="guardarEmpleado()">Agregar Empleado</button>
+                    <button mat-raised-button color="warn" type="submit" [disabled]="myForm.invalid">Guardar</button>
                 </div>
             </form>
         </mat-card>
