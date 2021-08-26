@@ -4,7 +4,7 @@ export class Empleado {
     correo!: string;
     fechaIngreso!: Date;
     estadoCivil!: string;
-    sexo!: string;
+    genero!: string;
 
     constructor(){
 
