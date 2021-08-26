@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MAT_RADIO_DEFAULT_OPTIONS } from '@angular/material/radio';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { Empleado } from 'src/app/models/empleado';
 import { EmpleadoService } from 'src/app/services/empleado.service';
@@ -22,7 +23,8 @@ export class AddEditEmpleadoComponent implements OnInit {
 
   constructor(private fb: FormBuilder, 
     private empleadoService: EmpleadoService,
-    private route: Router) { 
+    private route: Router,
+    private snackBar: MatSnackBar) { 
     this.myForm = this.fb.group({
       nombreCompleto: [''],
       correo: [''],
@@ -47,6 +49,9 @@ export class AddEditEmpleadoComponent implements OnInit {
     };
     this.empleadoService.agregarEmpleado(empleado);
     this.route.navigate(['/']);
+    this.snackBar.open('El empleado se ha agregago correctamente', '',{ 
+      duration: 2000
+    });
   }
 
 }

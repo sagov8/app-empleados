@@ -60,7 +60,8 @@ export class EmpleadoService {
     this.listEmpleado[idEmpleado].correo = empleado.correo;
     this.listEmpleado[idEmpleado].fechaIngreso = empleado.fechaIngreso;
     this.listEmpleado[idEmpleado].telefono = empleado.telefono;
-    this.listEmpleado[idEmpleado].genero = empleado.genero;
     this.listEmpleado[idEmpleado].estadoCivil = empleado.estadoCivil;
+    this.listEmpleado[idEmpleado].genero = empleado.genero;
+    
   }
 }
