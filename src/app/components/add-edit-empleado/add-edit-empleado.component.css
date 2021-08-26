@@ -1,9 +1,9 @@
 .card-form {
   text-align: center;
-  margin-left: 3rem;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  width: 100%;
+  margin-left: 10%;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  max-width: 100%;
 }
 
 .title {
@@ -15,7 +15,7 @@
 }
 
 .imgForm {
-    margin-top: 5rem;
+    margin-top: 10%;
 }
 
 .mdb-form-msg {
