@@ -7,6 +7,7 @@ import { Empleado } from 'src/app/models/empleado';
 import { MatDialog } from '@angular/material/dialog';
 import { MensajeConfirmacionComponent } from '../shared/mensaje-confirmacion/mensaje-confirmacion.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ActivatedRoute } from '@angular/router';
 
 /**
  * @title Basic use of `<table mat-table>`
@@ -22,7 +23,7 @@ export class ListEmpleadoComponent implements OnInit, AfterViewInit {
     'correo',
     'estadoCivil',
     'fechaIngreso',
-    'sexo',
+    'genero',
     'telefono',
     'acciones',
   ];
@@ -32,7 +33,7 @@ export class ListEmpleadoComponent implements OnInit, AfterViewInit {
   constructor(
     private empleadoService: EmpleadoService,
     public dialog: MatDialog,
-    public snackBar: MatSnackBar
+    public snackBar: MatSnackBar    
   ) {}
 
   @ViewChild(MatPaginator)
@@ -58,6 +59,7 @@ export class ListEmpleadoComponent implements OnInit, AfterViewInit {
   cargarEmpleados() {
     this.listEmpleados = this.empleadoService.getEmpleados();
     this.dataSource = new MatTableDataSource(this.listEmpleados);
+    this.ngAfterViewInit();
   }
 
   eliminarEmpleado(index: number) {

@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_RADIO_DEFAULT_OPTIONS } from '@angular/material/radio';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Empleado } from 'src/app/models/empleado';
 import { EmpleadoService } from 'src/app/services/empleado.service';
+
 
 @Component({
   selector: 'app-add-edit-empleado',
@@ -18,24 +19,32 @@ import { EmpleadoService } from 'src/app/services/empleado.service';
 export class AddEditEmpleadoComponent implements OnInit {
   
   estadosCiviles: any[] = ['Soltero', 'Casado', 'Divorciado'];
+  generos: any[] = ['Masculino', 'Femenino', 'No binario'];
 
   myForm: FormGroup;
+  idEmpleado: any;
+  accion = 'Crear';
 
   constructor(private fb: FormBuilder, 
     private empleadoService: EmpleadoService,
     private route: Router,
-    private snackBar: MatSnackBar) { 
+    private snackBar: MatSnackBar,
+    private aRoute: ActivatedRoute) { 
     this.myForm = this.fb.group({
-      nombreCompleto: [''],
-      correo: [''],
-      fechaIngreso: [''],
-      telefono: [''],
-      estadoCivil: [''],
-      genero: [''],
+      nombreCompleto: ['', [Validators.required, Validators.maxLength(30)]],
+      correo: ['', [Validators.required, Validators.email]],
+      fechaIngreso: ['', Validators.required],
+      telefono: ['', Validators.required],
+      estadoCivil: ['', Validators.required],
+      genero: ['', Validators.required],
     });
+    this.idEmpleado = this.aRoute.snapshot.params['id'];
   }
 
   ngOnInit(): void {
+    if(this.idEmpleado !== undefined){
+      this.accion = 'Editar';
+    }
   }
 
   guardarEmpleado(){
